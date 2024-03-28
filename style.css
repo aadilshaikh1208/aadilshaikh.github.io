@@ -9,6 +9,7 @@
     --text-light: #d1d5db;
     --white: #ffffff;
     --max-width: 1200px;
+
 }
 
 * {
@@ -19,7 +20,7 @@
 
 .section__container {
     max-width: var(--max-width);
-    margin: auto;
+    margin: 50px;
     padding: 5rem 1rem;
 }
 
@@ -75,13 +76,20 @@ body {
 
 
 nav {
-    max-width: var(--max-width);
-    margin: auto;
+    width: 100vw;
     padding: 2rem 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 3rem;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    height: 100px;
+}
+
+nav .btn {
+    margin-right: 50px;
 }
 
 .nav__logo {
@@ -95,10 +103,20 @@ nav {
     gap: 3rem;
 }
 
+.nav__menu {
+    font-size: 2.25rem;
+    display: none;
+    margin-top: 1rem;
+}
+
+.menu__list {
+    display: none;
+}
+
 .link a {
     position: relative;
     padding-bottom: .75rem;
-    color: var(--white)
+    color: var(--white);
 }
 
 .link a::after {
@@ -118,19 +136,20 @@ nav {
 }
 
 .header__container {
-    position: absolute;
+    position: relative;
     padding-top: 2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 2rem;
+    margin-top: 10rem;
 }
 
 .header__container::before {
     content: "FITNESS";
     position: absolute;
-    bottom: 5rem;
-    right: 20rem;
+    bottom: 1rem;
+    right: 18rem;
     font-size: 10rem;
     font-weight: 700;
     line-height: 7rem;
@@ -226,6 +245,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
+    position: relative;
 }
 
 .explore__card {
@@ -273,7 +293,8 @@ nav {
 }
 
 .explore__container {
-    margin-top: 40rem;
+    position: relative;
+    /* margin-top: 40rem; */
 }
 
 
@@ -287,13 +308,29 @@ nav {
     position: relative;
 }
 
-.class__image .class__img-1 {
+.class__image .class__img {
     position: absolute;
     right: 30px;
     top: 0px;
     max-width: 500px;
     border-radius: 10px;
 }
+
+/* .class__image .class-2 {
+    position: absolute;
+    right: 30px;
+    top: 0px;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.class__image .class-3 {
+    position: absolute;
+    right: 30px;
+    top: 0px;
+    max-width: 500px;
+    border-radius: 10px; */
+
 
 /* .class__image .class__img-2 {
     position: absolute;
@@ -592,7 +629,7 @@ nav {
     margin-bottom: 2rem;
     font-size: 1.2rem;
     font-weight: 500;
-    color: var(--white);
+    color: var(--secondary-color-dark);
 }
 
 .footer__col>a {
@@ -604,6 +641,7 @@ nav {
 
 .footer__col>a:hover {
     color: var(--secondary-color);
+    margin-left: 3px;
 }
 
 .footer__bar {
@@ -614,17 +652,80 @@ nav {
     color: var(--white);
 }
 
-@media (width < 900px) {
-    .nav__links {
-        display: none;
+
+/* @media(max-width:1250px)and (min-width:900px) {
+    nav {
+        max-width: 950px;
+    }
+} */
+
+/* Media query for screens smaller than 900px */
+@media (max-width:900px) {
+    nav {
+
+        gap: 2rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
     }
 
+
+
+    .nav__links {
+        gap: 2rem;
+        margin-left: 50px;
+        padding: 0;
+        display: flex;
+        flex-wrap: inherit;
+        margin-top: 3rem;
+    }
+
+
+    .nav__links a {
+        font-size: 21px;
+    }
+
+    .nav__logo img {
+        width: 170px;
+        margin-left: .5rem;
+        margin-top: 1.75rem;
+    }
+
+    nav .btn {
+        font-size: 18px;
+        padding: 10px 12px;
+        margin-top: 20px;
+        width: 150px;
+        /* Adjust as needed */
+    }
+
+    .header__container h1 {
+        font-size: 80px;
+    }
+
+
     .header__container {
-        grid-template-columns: repeat(1, 1fr);
+        margin-left: 3rem;
+    }
+
+    .header__container::before {
+        content: "FITNESS";
+        position: absolute;
+        bottom: 1rem;
+        right: 4%;
+        font-size: 9rem;
+        font-weight: 700;
+        line-height: 7rem;
+        color: var(--white);
+        opacity: 0.07;
+        z-index: -1;
     }
 
     .header__image {
-        grid-area: 1/1/2/2;
+        top: 50px;
+        left: 400px;
+        max-width: 250px;
     }
 
     .explore__grid {
@@ -637,11 +738,48 @@ nav {
     }
 
     .class__image {
-        min-height: 500px;
+        min-height: 250px;
+    }
+
+    .join__grid {
+        top: 22rem;
+    }
+
+    .section__subheader {
+        max-width: 30vw;
+        text-align: center;
+        margin-left: 200px;
+    }
+
+
+    .price__container {
+        position: relative;
+        margin-top: 25rem;
+    }
+
+    .price__btn1 {
+        margin-top: -0.5rem;
+        margin-left: 3rem;
+        padding: 10px 10px;
+        width: 7rem;
+    }
+
+    .price__btn2 {
+        margin-top: -0.5rem;
+        margin-left: 3rem;
+        padding: 10px 10px;
+        width: 7rem;
+    }
+
+    .price__btn3 {
+        margin-top: -0.95rem;
+        margin-left: 3rem;
+        padding: 10px 10px;
+        width: 7rem;
     }
 
     .price__grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .review__container {
@@ -653,7 +791,86 @@ nav {
     }
 }
 
-@media (width < 600px) {
+/* Media query for screens smaller than 600px */
+@media (max-width: 600px) {
+
+    nav {
+        /* padding: 0; */
+        margin: 0;
+        /* max-width: 400px; */
+        gap: 1.5rem;
+        flex-direction: row;
+    }
+
+    .nav__links {
+        gap: 10px;
+        margin-left: -10px;
+    }
+
+    .nav__links a {
+        font-size: 12px;
+    }
+
+    nav .btn {
+        font-size: 11px;
+        padding-top: 5px;
+        margin-left: -8px;
+    }
+
+    .nav__logo img {
+        width: 100px;
+        /* margin-right: 1px; */
+        margin-left: -1rem;
+        left: 100px;
+    }
+
+    .header__container::before {
+        content: "FITNESS";
+        position: absolute;
+        bottom: 1rem;
+        left: 6rem;
+        font-size: 6rem;
+        font-weight: 700;
+        line-height: 7rem;
+        color: var(--white);
+        opacity: 0.07;
+        z-index: -1;
+    }
+
+    .header__content h1 {
+        margin-bottom: 1rem;
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 3.2rem;
+        color: var(--white);
+    }
+
+    .header__content h4 {
+        width: 220px;
+    }
+
+    .header__image {
+        position: absolute;
+        top: 100px;
+        left: 230px;
+        width: 200px;
+    }
+
+    .section__subheader {
+        color: var(--text-light);
+        max-width: 30vw;
+        text-align: center;
+        margin-left: 120px;
+    }
+
+    .section__header {
+        margin-top: 4rem;
+        font-size: 2.25rem;
+        font-weight: 600;
+        text-align: center;
+        color: var(--white);
+    }
+
     .explore__header {
         flex-direction: column;
     }
@@ -669,7 +886,223 @@ nav {
     .join__grid {
         width: 100%;
         margin: 0;
-        bottom: -20rem;
+        bottom: -27rem;
+    }
+
+    .price__grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .review__container {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .review__footer {
+        flex-direction: column;
+    }
+
+    .footer__container {
+        grid-template-columns: 1fr 150px;
+    }
+
+    .footer__bar {
+        text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
+
+    nav {
+        padding: 0;
+        margin: 0;
+        /* max-width: 400px; */
+        gap: 1.5rem;
+        flex-direction: row;
+    }
+
+    .nav__links {
+        gap: 10px;
+        margin-left: -10px;
+    }
+
+    .nav__links a {
+        font-size: 15px;
+    }
+
+    nav .btn {
+        font-size: 11px;
+        padding-top: 5px;
+        margin-left: -8px;
+    }
+
+    .nav__logo img {
+        width: 125px;
+        margin-left: 1rem;
+        left: 100px;
+    }
+
+
+
+    .header__container::before {
+        content: "FITNESS";
+        position: absolute;
+        bottom: -2rem;
+        left: 4rem;
+        font-size: 4rem;
+        font-weight: 700;
+        line-height: 7rem;
+        color: var(--white);
+        opacity: 0.07;
+        z-index: -1;
+    }
+
+    .header__content h1 {
+        margin-bottom: 1rem;
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 2.8rem;
+        color: var(--white);
+    }
+
+    .section__header {
+        margin-left: 4rem;
+        width: 200px;
+    }
+
+    .class__container p {
+        padding-right: 50px;
+        margin-left: 3.8rem;
+        width: 250px;
+        text-align: center;
+    }
+
+    .class__container .btn {
+        margin-left: 4rem;
+    }
+
+    .header__image {
+        position: absolute;
+        top: 100px;
+        left: 160px;
+        width: 200px;
+    }
+
+    .header__content p {
+        margin-bottom: 2rem;
+        justify-content: center;
+        height: 80px;
+        width: 170px;
+        color: var(--text-light);
+    }
+
+    .header__content h4 {
+        width: 220px;
+    }
+
+
+    .header__content .btn {
+        margin-top: 12rem;
+    }
+
+    .header__container {
+        top: -1rem;
+    }
+
+    .explore__container {
+        top: -8rem;
+        left: 4rem;
+    }
+
+    .class__image {
+        top: -10rem;
+        left: 4rem;
+
+    }
+
+    .class__image img {
+        width: 250px;
+        height: 200px;
+    }
+
+    .price__container .section__header {
+        margin-top: 35rem;
+    }
+
+    .section__header {
+        left: 4rem;
+    }
+
+    .section__subheader {
+        width: 250px;
+    }
+
+    .join__image {
+        margin-left: 5rem;
+        width: 200px;
+        /* height: 100px; */
+    }
+
+    .join__image img {
+        height: 130px;
+    }
+
+    .price__grid {
+        margin-left: 4rem;
+    }
+
+    #p1 {
+        font-size: small;
+    }
+
+    .price__btn1 {
+        margin-top: -0.5rem;
+        margin-left: 3rem;
+        padding: 10px 10px;
+        width: 7rem;
+        font-size: small;
+    }
+
+    .price__btn2 {
+        margin-top: -0.5rem;
+        margin-left: 3rem;
+        padding: 10px 10px;
+        width: 7rem;
+        font-size: small;
+
+    }
+
+    .price__btn3 {
+        margin-top: -0.95rem;
+        margin-left: 3rem;
+        padding: 10px 10px;
+        width: 7rem;
+        font-size: small;
+
+    }
+
+    .review {
+        margin-left: 6rem;
+        width: 300px;
+    }
+
+    .explore__header {
+        flex-direction: column;
+    }
+
+    .explore__grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .join__container {
+        margin-bottom: 15rem;
+    }
+
+    .join__grid {
+        width: 150%;
+        margin-left: -5rem;
+        bottom: -27rem;
+        height: 50rem;
     }
 
     .price__grid {
