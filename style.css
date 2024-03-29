@@ -653,13 +653,69 @@ nav .btn {
 }
 
 
-/* @media(max-width:1250px)and (min-width:900px) {
+@media (max-width:1200px) {
     nav {
-        max-width: 950px;
+        width: 100%;
+        gap: 2rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
     }
-} */
 
-/* Media query for screens smaller than 900px */
+    .header__image {
+        top: 50px;
+        left: 500px;
+        max-width: 250px;
+    }
+
+    .header__container::before {
+        content: "FITNESS";
+        position: absolute;
+        bottom: 1rem;
+        right: 6rem;
+        font-size: 9rem;
+        font-weight: 700;
+        line-height: 7rem;
+        color: var(--white);
+        opacity: 0.07;
+        z-index: -1;
+    }
+
+    .join__grid {
+        top: 27rem;
+        height: 20rem;
+
+    }
+
+    .price__btn1 {
+        margin-top: -0.5rem;
+        margin-left: 3rem;
+        margin-right: 2rem;
+        padding: 10px 10px;
+        width: 7rem;
+    }
+
+    .price__btn2 {
+        margin-top: -0.5rem;
+        margin-left: 3rem;
+        margin-right: 2rem;
+        padding: 10px 10px;
+        width: 7rem;
+    }
+
+    .price__btn3 {
+        margin-top: -0.5rem;
+        margin-left: 3rem;
+        margin-right: 2rem;
+        padding: 10px 10px;
+        width: 7rem;
+    }
+
+
+}
+
+
 @media (max-width:900px) {
     nav {
 
@@ -759,27 +815,41 @@ nav .btn {
 
     .price__btn1 {
         margin-top: -0.5rem;
-        margin-left: 3rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
         padding: 10px 10px;
         width: 7rem;
+        /* position: relative; */
     }
 
     .price__btn2 {
         margin-top: -0.5rem;
-        margin-left: 3rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
         padding: 10px 10px;
         width: 7rem;
     }
 
     .price__btn3 {
         margin-top: -0.95rem;
-        margin-left: 3rem;
+        margin-left: 2rem;
         padding: 10px 10px;
         width: 7rem;
     }
 
+    .price__card #p1 {
+        font-size: .65rem;
+    }
+
+    .price__card__content {
+        font-size: .75rem;
+    }
+
     .price__grid {
         grid-template-columns: repeat(3, 1fr);
+        margin-left: -3rem;
+        gap: 1rem;
+
     }
 
     .review__container {
